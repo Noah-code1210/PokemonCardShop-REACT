@@ -1,21 +1,263 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "PT Sans", sans-serif;
+  color: #fff;
+}
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Open Sans", sans-serif;
+a {
+  text-decoration: none;
+  font-family: "Kanit", sans-serif;
+}
+
+li {
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.purple {
+  color: purple;
+}
+
+/* 
+
+NAV
+
+*/
+
+.nav__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 8px 16px;
+  width: 100%;
+  max-width: 1440px;
+  height: 8vh;
+  border-bottom: 2px solid white;
+  position: fixed;
+  z-index: 1;
+}
+
+.nav__img--wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.nav__img {
+  width: 100%;
+  max-width: 124px;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+.nav__img:hover {
+  scale: 103%;
+}
+
+.nav__link--list {
+  display: flex;
+}
+
+.nav__link {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 24px;
+  position: relative;
+}
+
+.nav__link--hover-effect:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.nav__link--hover-effect:after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  bottom: -3px;
+  width: 0;
+  right: 0;
+  transition: all 300ms ease;
+  background-color: #fff;
+}
+
+/* 
+
+HEADER
+
+*/
+
+header {
+  background-color: #000000;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1480px;
+  height: calc(100% - 8vh);
+  padding: 48px 0 48px 42px;
+  position: relative;
+}
+
+.header__description {
+  display: flex;
+  align-items: center;
+}
+
+.header__title {
+  font-size: 80px;
+  margin-right: 200px;
+  font-family: "Kanit", sans-serif;
+}
+
+.featured__cards--wrapper {
+  margin-top: 48px;
+}
+
+.featured__card--img {
+  width: 100%;
+  max-width: 220px;
+  padding: 24px 32px;
+  transition: all 300ms ease;
+}
+
+.featured__card--img:hover {
+  transform: scale(104%);
+}
+
+.background__img {
+  background-image: url("./images/Image.1.avif");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  position: absolute;
+  width: 1600px;
+  height: 880px;
+  z-index: 0;
+}
+.background__img:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(230, 26, 18, 0.6);
+  pointer-events: none;
+}
+
+/*
+
+SEARCH
+
+*/
+
+#search {
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin-top: 80px;
+}
+
+.search__description {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.search__title {
+  font-size: 62px;
+  font-style: italic;
+  color: #242424;
+  text-align: center;
+  padding-bottom: 45px;
+  margin: 100px 150px 0 150px;
+}
+
+.search__bar--wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+}
+
+.search__bar {
+  border-radius: 500px;
+  border: 1px solid black;
+  font-size: 20px;
+  width: 100%;
+  max-width: 800px;
+  height: 58px;
+  padding-left: 20px;
+  margin-bottom: 100px;
+}
+
+input {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: flex-end;
+  color: black;
+}
+
+.search__bar--btn-wrapper {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.search__bar--btn {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  padding: 10px;
+  top: 0;
+  right: 0;
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+.search__bar--btn:hover {
+  opacity: 86%;
+  scale: 94%;
+}
+
+.search--img {
+  background-image: url(https://tcg.pokemon.com/assets/img/sv-expansions/destined-rivals/patterns/pattern-diagonal.png);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  position: absolute;
+  width: 1600px;
+  height: 860px;
+  z-index: 0;
+  background-color: #;
 }
