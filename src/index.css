@@ -389,7 +389,6 @@ select {
 .pokemon__list {
   width: 10px;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
 }
 
