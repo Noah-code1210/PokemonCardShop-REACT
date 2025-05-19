@@ -27,6 +27,7 @@ function Search() {
               </div>
             </div>
           </div>
+          <div className="loading__state"></div>
         </div>
       </div>
     </section>

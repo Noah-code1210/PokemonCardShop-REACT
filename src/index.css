@@ -37,6 +37,8 @@ li {
   color: purple;
 }
 
+/* HOME PAGE */
+
 /* 
 
 NAV
@@ -50,7 +52,7 @@ NAV
   background-color: black;
   padding: 8px 16px;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1435px;
   height: 8vh;
   border-bottom: 2px solid white;
   position: fixed;
@@ -113,8 +115,8 @@ header {
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 1480px;
-  height: calc(100% - 8vh);
+  max-width: 1435px;
+  height: calc(100% - 8vh); 
   padding: 48px 0 48px 42px;
   position: relative;
 }
@@ -122,6 +124,7 @@ header {
 .header__description {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .header__title {
@@ -136,7 +139,7 @@ header {
 
 .featured__card--img {
   width: 100%;
-  max-width: 220px;
+  max-width: 194px;
   padding: 24px 32px;
   transition: all 300ms ease;
 }
@@ -151,7 +154,7 @@ header {
   background-position: 50%;
   background-size: cover;
   position: absolute;
-  width: 1600px;
+  width: 1467px;
   height: 880px;
   z-index: 0;
 }
@@ -162,9 +165,10 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(230, 26, 18, 0.6);
+  background-color: #e61a1299;
   pointer-events: none;
 }
+
 
 /*
 
@@ -178,7 +182,7 @@ SEARCH
 
 .container {
   width: 100%;
-  max-width: 1600px;
+  max-width: 1435px;
   margin-top: 80px;
 }
 
@@ -192,7 +196,7 @@ SEARCH
 .search__title {
   font-size: 62px;
   font-style: italic;
-  color: #242424;
+  color: white;
   text-align: center;
   padding-bottom: 45px;
   margin: 100px 150px 0 150px;
@@ -215,7 +219,7 @@ SEARCH
   max-width: 800px;
   height: 58px;
   padding-left: 20px;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
 }
 
 input {
@@ -245,9 +249,11 @@ input {
   transition: all 300ms ease;
   cursor: pointer;
 }
+.search__bar--btn:active {  
+  scale: 80%;
+}
 .search__bar--btn:hover {
-  opacity: 86%;
-  scale: 94%;
+  opacity: 80%;
 }
 
 .search--img {
@@ -256,8 +262,39 @@ input {
   background-position: 50%;
   background-size: cover;
   position: absolute;
-  width: 1600px;
-  height: 860px;
+  width: 1467px;
+  height: 734px;
   z-index: 0;
-  background-color: #;
+  background-color: rgb(111, 21, 100, 0.8);
+}
+.search__img:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+/* CARD PAGE */
+
+#card__header {
+  background-color: black;
+  width: 100%;
+  max-width: 1435px;
+}
+
+.card__container {
+  width: 100%;
+  max-width: 1495px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 100px 0 0 0 ;
+}
+
+.card__title {
+  font-size: 100px;
+  color: white;
 }

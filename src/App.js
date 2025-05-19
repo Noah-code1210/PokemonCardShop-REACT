@@ -1,17 +1,16 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Card from "./pages/Card";
 import Buy from "./pages/Buy";
 import Cart from "./pages/Cart";
-
-
-
+import Nav from "./components/Nav";
 
 function App() {
   return (
     <div className="App">
       <Router>
+      <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/card" element={<Card />} />
