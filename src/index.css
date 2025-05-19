@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "PT Sans", sans-serif;
   color: #fff;
 }
@@ -52,8 +52,8 @@ NAV
   background-color: black;
   padding: 8px 16px;
   width: 100%;
-  max-width: 1435px;
-  height: 8vh;
+  max-width: 1470px;
+  height: 10vh;
   border-bottom: 2px solid white;
   position: fixed;
   z-index: 1;
@@ -116,7 +116,7 @@ header {
   align-items: center;
   width: 100%;
   max-width: 1435px;
-  height: calc(100% - 8vh); 
+  height: calc(100% - 8vh);
   padding: 48px 0 48px 42px;
   position: relative;
 }
@@ -139,7 +139,7 @@ header {
 
 .featured__card--img {
   width: 100%;
-  max-width: 194px;
+  max-width: 276px;
   padding: 24px 32px;
   transition: all 300ms ease;
 }
@@ -154,8 +154,8 @@ header {
   background-position: 50%;
   background-size: cover;
   position: absolute;
-  width: 1467px;
-  height: 880px;
+  width: 1470px;
+  height: 922px;
   z-index: 0;
 }
 .background__img:after {
@@ -168,7 +168,6 @@ header {
   background-color: #e61a1299;
   pointer-events: none;
 }
-
 
 /*
 
@@ -240,8 +239,8 @@ input {
 }
 
 .search__bar--btn {
-  width: 40px;
-  height: 40px;
+  width: 58px;
+  height: 58px;
   position: absolute;
   padding: 10px;
   top: 0;
@@ -249,7 +248,7 @@ input {
   transition: all 300ms ease;
   cursor: pointer;
 }
-.search__bar--btn:active {  
+.search__bar--btn:active {
   scale: 80%;
 }
 .search__bar--btn:hover {
@@ -262,7 +261,7 @@ input {
   background-position: 50%;
   background-size: cover;
   position: absolute;
-  width: 1467px;
+  width: 1470px;
   height: 734px;
   z-index: 0;
   background-color: rgb(111, 21, 100, 0.8);
@@ -282,19 +281,141 @@ input {
 #card__header {
   background-color: black;
   width: 100%;
-  max-width: 1435px;
+  max-width: 1470px;
+  height: 65vh;
+  position: relative;
 }
 
 .card__container {
-  width: 100%;
-  max-width: 1495px;
-  height: 100%;
+  height: 50vh;
   display: flex;
   justify-content: center;
-  padding: 100px 0 0 0 ;
+  padding-top: 120px;
+}
+
+.card__row {
+  width: 100%;
+  max-width: 1470px;
+}
+
+.card__description {
+  z-index: 0;
+  position: relative;
 }
 
 .card__title {
-  font-size: 100px;
+  font-size: 76px;
   color: white;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.card__search-bar {
+  width: 100%;
+  max-width: 900px;
+}
+
+.card__search-bar--wrapper {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  margin-left: 282px;
+}
+
+.card__background--img {
+  background-image: url(https://pbs.twimg.com/media/GbT_3vwWMAEAlZP.jpg:large);
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  max-width: 1470px;
+  height: 65vh;
+}
+.card__background--img:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(41, 25, 71, 0.83);
+  pointer-events: none;
+}
+
+.shopping__container {
+  padding: 16px 60px;
+}
+
+.shopping__row {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 100px 80px 100px;
+}
+
+.shopping__title {
+  color: black;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.price__title {
+  font-size: 20px;
+}
+
+select {
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #6030b1;
+  color: black;
+  height: 40px;
+  line-height: 40px;
+  outline: none;
+  padding: 0 16px;
+  width: 100%;
+  max-width: 200px;
+}
+
+
+.pokemon__cards {
+  margin: 192px 24px;
+}
+
+.pokemon__list {
+  width: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.pokemon__slot {
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 300ms ease;
+}
+
+.pokemon__slot--description {
+  padding: 2px 16px;
+}
+
+.pokemon__img {
+  position: relative;
+}
+
+b {
+  color: black;
+}
+
+.pokemon__info {
+  color: black;
+  padding-bottom: 8px;
 }
