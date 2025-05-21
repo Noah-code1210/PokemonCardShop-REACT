@@ -12,7 +12,7 @@ function Header() {
             <br />
             EX-Cards
           </h1>
-          <Link to="/card">
+          <Link to="/cards">
             <div className="featured__cards--wrapper">
               <img
                 src="https://images.pokemontcg.io/xy12/1.png"

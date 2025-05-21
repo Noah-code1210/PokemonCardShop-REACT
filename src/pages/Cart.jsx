@@ -1,11 +1,18 @@
-import React from 'react'
+import React from "react";
 
 function Cart() {
   return (
-    <div>
-      
-    </div>
-  )
+    <section id="cart">
+      <div className="btn__wrapper">
+        <button
+          className="cart__btn"
+          onClick={() =>alert("Still need a little more practice before adding this feature :)")}
+        >
+          Click Here
+        </button>
+      </div>
+    </section>
+  );
 }
 
-export default Cart
+export default Cart;

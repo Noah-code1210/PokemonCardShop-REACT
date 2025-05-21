@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faSpinner, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faSpinner)
+library.add(faSpinner, faArrowLeft)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
