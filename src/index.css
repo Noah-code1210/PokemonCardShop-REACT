@@ -6,6 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "PT Sans", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -25,7 +26,7 @@ code {
 a {
   text-decoration: none;
   font-family: "Kanit", sans-serif;
-  color: white
+  color: white;
 }
 
 li {
@@ -56,7 +57,7 @@ NAV
   height: 10vh;
   border-bottom: 2px solid white;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
 }
 
 .nav__img--wrapper {
@@ -147,7 +148,7 @@ header {
 
 .featured__card--img:hover {
   transform: scale(104%);
-  cursor: pointer;
+  cursor: not-allowed;
 }
 .featured__card--img:active {
   transform: scale(100%);
@@ -202,8 +203,39 @@ SEARCH
   font-style: italic;
   color: white;
   text-align: center;
-  padding-bottom: 45px;
+  padding-bottom: 85px;
   margin: 100px 150px 0 150px;
+}
+
+.search__btn--wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.search__btn {
+  border-radius: 100px;
+  border: none;
+  font-size: 20px;
+  width: 100%;
+  max-width: 800px;
+  height: 58px;
+  margin-left: 24px;
+  background-color: #e4e4e4;
+  color: black;
+  font-size: 20px;
+  transition: all 300ms ease;
+}
+.search__btn:hover {
+  transform: scale(104%);
+  background-color: #303030;
+  color: white;
+  cursor: pointer;
+}
+.search__btn:active {
+  transform: scale(99%);
 }
 
 .search__bar--wrapper {
@@ -281,6 +313,64 @@ input {
   pointer-events: none;
 }
 
+/* 
+
+FEATURED PAGE
+
+*/
+
+#featured {
+  width: 100%;
+  max-width: 1470px;
+  height: 100%;
+  background: #ffffff;
+}
+
+.featured__cards--title {
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-size: 52px;
+  font-style: italic;
+  font-weight: bold;
+  padding-top: 140px;
+  padding: 152px 0 122px 0;
+  border-bottom: 2px solid black;
+}
+
+.slot__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 62px 0 0 104px;
+}
+
+.slot {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin: 24px 16px;
+  padding: 12px 6px;
+}
+
+.slot__description {
+  padding: 10px 16px;
+}
+
+.img--wrapper {
+  padding: 18px 22px;
+}
+
+.featured__img {
+  width: 340px;
+  height: 340px;
+}
+
+.featured__img--title {
+  color: black;
+  font-size: 20px;
+  padding: 12px 0;
+}
+
 /* CARD PAGE */
 
 #card__header {
@@ -348,7 +438,7 @@ input {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(41, 25, 71, 0.83);
+  background-color: #291947d4;
   pointer-events: none;
 }
 
@@ -401,7 +491,6 @@ select {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 10px;
   transition: 0.3s;
-  cursor: pointer;
   border-radius: 10px;
   transition: all 300ms ease;
 }
@@ -419,11 +508,12 @@ select {
 
 .pokemon__img {
   position: relative;
-  transition: filter 300ms 100ms ease, transform 100ms ease
+  transition: filter 300ms 100ms ease, transform 100ms ease;
 }
 .pokemon__img:hover {
   transform: scale(102%);
   filter: blur(8px);
+  cursor: not-allowed;
 }
 .pokemon__img:active {
   transform: scale(100%);
@@ -441,7 +531,7 @@ select {
 .pokemon__img--wrapper:hover .img__hover-text {
   opacity: 1;
 }
-  
+
 b {
   color: black;
 }
@@ -454,7 +544,7 @@ b {
 .no-results {
   width: 100%;
   max-width: 1470px;
-  padding: 48px 300px ;
+  padding: 48px 300px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -591,71 +681,162 @@ BUY PAGE
   transform: scale(105%);
 }
 
- /* 
+/* 
  
- CART PAGE
+ EXPANSIONS PAGE
  
  */
 
- #cart {
+#expansions {
   width: 100%;
   max-width: 1470px;
   height: 100vh;
- }
+}
 
- .btn__wrapper {
+.ex__background--img {
+  background-image: url("https://tcg.pokemon.com/assets/img/sv-expansions/destined-rivals/header/sv10-hero-3-large-up-2x.jpg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  position: absolute;
+  padding-top: 100px;
+  width: 1470px;
+  height: 100vh;
+  z-index: 0;
+}
+.background__img:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.ex__description {
   width: 100%;
   max-width: 1470px;
+  height: 100vh;
+  padding-right: 56px;
   display: flex;
-  align-items: center;
-  height: 80vh;
+  flex-direction: column;
   justify-content: center;
-  padding-top: 200px;
- }
+  align-items: flex-end;
+}
 
-.cart__btn {
-  font-size: 26px;
-  width: 200px;
-  height: 100px;
+
+.ex__title--img {
+  width: 500px;
+  z-index: 1;
+}
+
+.ex__title {
+  color: rgb(236, 236, 236);
+  font-size: 52px;
+  font-style: italic;
+  padding-top: 32px;
+  margin-right: 104px;
+  z-index: 1;
+}
+
+.ex__btn {
+  background-color: rgb(179, 179, 179);
+  font-size: 28px;
+  padding: 20px 84px;
+  margin-top: 26px;
+  border-radius: 100px;
   border: none;
-  border-radius: 5px;
+  margin-right: 104px;
+  z-index: 1;
   transition: all 300ms ease;
 }
-.cart__btn:hover {
-  transform: scale(105%);
-  background-color: darkgray;
+.ex__btn:hover {
+  background-image: linear-gradient(to right, #e61912, #291947);
+  color: white;
+  transform: scale(104%);
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px rgb(222, 222, 222));
 }
-.cart__btn:active {
+.ex__btn:active {
   transform: scale(100%);
 }
 
-/* 
-
-CARDS PAGE
-
-*/
-
-#cards {
+#featured__bundles {
   width: 100%;
   max-width: 1470px;
-  height: 100vh;
-  background-color: lightgray;
+  background-image: linear-gradient(180deg, #330f38 0%, #6f1565 50%, #330f38 100%);
 }
 
-.cards__container {
-  padding: 100px 0 0 92px;
-}
-
-.cards__navigation {
-  padding-top: 48px;
+.featured__bundles--title {
+  color: white;
+  padding: 62px 0;
+  font-size: 38px;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  text-transform: uppercase;
   display: flex;
-  align-items: center;
-
+  justify-content: center;
 }
 
-.cards__arrow--icon {
-  color: black;
-  width: 24px;
-  height: 24px;
-  padding-right: 16px;
+.featured__slots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 32px;
 }
+
+.featured__slot {
+  background-color: white;
+  margin: 14px 24px;
+  padding: 10px 24px;
+  text-align: center;
+  border: 4px solid rgba(255, 0, 0, 0.426);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 340px;
+  height: 500px;
+  transition: filter 300ms ease, transform 300ms 200ms ease;
+}
+.featured__slot:hover {
+  filter: drop-shadow(0 0 10px rgb(255, 229, 81));
+  transform: translateY(-10px)
+}
+
+.featured__img {
+  width: 260px;
+  height: 260px;
+  margin-bottom: 20px;
+  transition: all 300ms ease;
+}
+.featured__slot:hover .featured__img {
+  transform: scale(103%);
+}
+
+.featured__title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.featured__para {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.shop__btn {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #95100b;
+  width: 260px;
+  height: 50px;
+  border: 4px solid rgba(255, 0, 0, 0.521);
+  border-radius: 8px;
+  transition: all 300ms ease;
+}
+.featured__slot:hover .shop__btn {
+  background-color: #831B1F;
+  color: white;
+  cursor: pointer;
+}
+

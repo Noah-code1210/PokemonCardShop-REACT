@@ -7,9 +7,9 @@ import {
 import Home from "./pages/Home";
 import Card from "./pages/Card";
 import Buy from "./pages/Buy";
-import Cart from "./pages/Cart";
 import Nav from "./components/Nav";
-import Cards from "./pages/Cards";
+import Featured from "./pages/Featured";
+import Expansions from "./pages/Expansions";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -19,11 +19,11 @@ function App() {
       <Router>
         <Nav />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/card" element={<Card />} />
-          <Route path="/cards" element={<Cards />} />
+          <Route path="/" element={<Home setSearchTerm={setSearchTerm}/>} />
+          <Route path="/card" element={<Card  setSearchTerm={setSearchTerm} searchTerm={searchTerm}/>} />
+          <Route path="/featured" element={<Featured />} />
           <Route path="/buy" element={<Buy />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/expansions" element={<Expansions />} />
         </Routes>
       </Router>
     </div>

@@ -21,7 +21,7 @@ function Nav() {
             <a href="/buy">Where to Buy?</a>
           </li>
           <li className="nav__link">
-            <a href="/cart">Cart</a>
+            <a href="/expansions">Expansions</a>
           </li>
         </ul>
       </div>

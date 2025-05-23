@@ -66,11 +66,11 @@ function Card() {
       });
     } else if (filter === "SUB-TYPE") {
       sortedCards.sort((a, b) => {
-        const subTypeA =
-          a.subtypes && a.subtypes.length > 0 ? a.subtypes[0] : "";
         const subTypeB =
           b.subtypes && b.subtypes.length > 0 ? b.subtypes[0] : "";
-        return subTypeA.localeCompare(subTypeB);
+        const subTypeA =
+          a.subtypes && a.subtypes.length > 0 ? a.subtypes[0] : "";
+        return subTypeB.localeCompare(subTypeA);
       });
     }
     setSortedPokemon(sortedCards);
@@ -131,7 +131,7 @@ function Card() {
               defaultValue="DEFAULT"
               onChange={(event) => handleSort(event.target.value)}
             >
-              <option value="DEFAULT" disabled>
+              <option value="DEFAULT">
                 Sort
               </option>
               <option value="LOW_TO_HIGH">Health, Low to High</option>
@@ -148,7 +148,6 @@ function Card() {
                   <div className="pokemon__list">
                     <div className="pokemon__slot">
                       <div className="pokemon__slot--description">
-                        <Link to={`/cards/${pokemon.id}`}>
                           <figure className="pokemon__img--wrapper">
                             <img
                               className="pokemon__img"
@@ -162,7 +161,6 @@ function Card() {
                               <br />→
                             </h2>
                           </figure>
-                        </Link>
                         <h3 className="pokemon__name">Name: {pokemon.name}</h3>
                         <p className="pokemon__info">
                           <b>Type: </b>
