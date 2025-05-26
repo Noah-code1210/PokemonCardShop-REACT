@@ -594,6 +594,68 @@ b {
   }
 }
 
+
+/* 
+
+CARDS
+
+*/
+
+.cards__body {
+  width: 100%;
+  max-width: 1470px;
+  height: 100vh;
+}
+
+.cards__container {
+  width: 100%;
+  max-width: 1470px;
+  padding-top: 140px;
+  margin: 0 48px;
+}
+
+.back__arrow {
+  display: flex;
+  align-items: center;
+}
+
+.back__link {
+  color: black;
+  padding-right: 10px;
+}
+
+.cards__selected--wrapper {
+  display: flex;
+  justify-content: center;
+
+}
+
+.cards__selected {
+  padding-top: 80px;
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.cards__img {
+  width: 400px;
+  padding-right: 48px;
+}
+
+.cards__selected--title {
+  font-size: 60px;
+  padding-bottom: 32px;
+}
+
+.cards__selected--para {
+  font-size: 18px;
+  width: 100%;
+  max-width: 400px;
+}
+
+
+
+
 /* 
 
 BUY PAGE

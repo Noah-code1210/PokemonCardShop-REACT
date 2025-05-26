@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import NoResults from "../images/NoResults.png";
 
 function Card() {
@@ -10,6 +10,7 @@ function Card() {
   const [sortedPokemon, setSortedPokemon] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState(id || ""); // Initialize with id or empty string
+  const navigate = useNavigate()
 
   // Function to fetch Pokémon data
   async function fetchPokemon(query) {
@@ -131,9 +132,7 @@ function Card() {
               defaultValue="DEFAULT"
               onChange={(event) => handleSort(event.target.value)}
             >
-              <option value="DEFAULT">
-                Sort
-              </option>
+              <option value="DEFAULT">Sort</option>
               <option value="LOW_TO_HIGH">Health, Low to High</option>
               <option value="HIGH_TO_LOW">Health, High to Low</option>
               <option value="TYPE">Type</option>
@@ -143,24 +142,26 @@ function Card() {
 
           <div className="pokemon__wrapper">
             {sortedPokemon.length > 0 ? ( // Display cards only if available
-              sortedPokemon.map((pokemon, index) => (
-                <div id="pokemon" key={index}>
+              sortedPokemon.map((pokemon) => (
+                <div id="pokemon" >
                   <div className="pokemon__list">
                     <div className="pokemon__slot">
                       <div className="pokemon__slot--description">
-                          <figure className="pokemon__img--wrapper">
+                        <figure className="pokemon__img--wrapper">
                             <img
                               className="pokemon__img"
                               src={pokemon.images?.small} // Use optional chaining
                               alt={pokemon.name} // Add alt text for accessibility
+                              key={pokemon.id}
+                              onClick={() => navigate(`/cards/${pokemon.id}`)}
                             />
-                            <h2 className="img__hover-text">
-                              Learn
-                              <br />
-                              More
-                              <br />→
-                            </h2>
-                          </figure>
+                          <h2 className="img__hover-text">
+                            Learn
+                            <br />
+                            More
+                            <br />→
+                          </h2>
+                        </figure>
                         <h3 className="pokemon__name">Name: {pokemon.name}</h3>
                         <p className="pokemon__info">
                           <b>Type: </b>

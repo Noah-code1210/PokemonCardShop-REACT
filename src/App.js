@@ -10,18 +10,18 @@ import Buy from "./pages/Buy";
 import Nav from "./components/Nav";
 import Featured from "./pages/Featured";
 import Expansions from "./pages/Expansions";
+import Cards from "./pages/Cards";
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState("");
-
   return (
     <div className="App">
       <Router>
         <Nav />
         <Routes>
-          <Route path="/" element={<Home setSearchTerm={setSearchTerm}/>} />
-          <Route path="/card" element={<Card  setSearchTerm={setSearchTerm} searchTerm={searchTerm}/>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/card" element={<Card  />} />
           <Route path="/featured" element={<Featured />} />
+          <Route path="/cards/:id" element={<Cards />} />
           <Route path="/buy" element={<Buy />} />
           <Route path="/expansions" element={<Expansions />} />
         </Routes>
